@@ -1,0 +1,24 @@
+{
+  "name": "special_districts_api",
+  "version": "0.0.1",
+  "description": "spatial query for special districts",
+  "main": "app.js",
+  "dependencies": {
+    "express": "^4.13.4",
+    "pg": "^5.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/royhobbstn/Special_Districts_API.git"
+  },
+  "author": "Daniel Trone",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/royhobbstn/Special_Districts_API/issues"
+  },
+  "homepage": "https://github.com/royhobbstn/Special_Districts_API#readme"
+}
