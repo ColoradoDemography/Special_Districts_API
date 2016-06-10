@@ -124,7 +124,7 @@ var appRouter = function(app) {
             var lgidarray = lgid.split(",");
             var lgidstr = "";
 
-            lgidarray.forEach(function(d) {
+            lgidarray.forEach(function(c) {
                 lgidstr = lgidstr + " lgid='" + c + "' or";
             });
 
