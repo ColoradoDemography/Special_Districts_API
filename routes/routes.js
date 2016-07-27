@@ -176,7 +176,7 @@ var appRouter = function(app) {
                             if (resultdata[t].hasOwnProperty(key)) {
 
                                 if (key !== "geojson") {
-                                    props = props + (props.length > 0 ? ',' : '') + '"' + key + '":"' + resultdata[t][key] + '"';
+                                    props = props + (props.length > 0 ? ',' : '') + '"' + key + '":"' + resultdata[t][key].replace(/'/g, '').replace(/"/g, '') + '"';
                                 }
                                 if (key === "id") {
                                     id = id + ',"id":"' + resultdata[t][key] + '"';
