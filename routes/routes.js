@@ -11,7 +11,7 @@ var appRouter = function(app) {
         var schema = 'bounds';
         var tname = 'districts';
 
-        var limit = req.query.limit || 1000; //by default limits to 1000 search results.  override by setting limit= in GET string
+        var limit = req.query.limit || 5000; //by default limits to 1000 search results.  override by setting limit= in GET string
         var active = req.query.active || '0'; //comma delimited list of lgstatusid's, if '0' then all
 
         var activearray = [];
