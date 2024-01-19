@@ -181,7 +181,7 @@ var appRouter = function(app) {
         if (req.query.lgid) {
             sql = "SELECT lgid, lastupdate, lgname, lgtypeid, lgstatusid, source, mail_address, alt_address, mail_city, mail_state, mail_zip, url, prev_name, abbrev_name, st_asgeojson(st_transform(ST_Simplify(geom," + tolerance + "),4326)) AS geojson from " + schema + "." + tname + " natural join " + schema + ".lgbasic " + lgidstr + ";";
         } else {
-            sql = "SELECT lgid, lastupdate, lgname, lgtypeid, lgstatusid, source, mail_address, alt_address, mail_city, mail_state, mail_zip, url, prev_name, abbrev_name, st_asgeojson(st_transform(ST_Simplify(geom," + tolerance + "),4326)) AS geojson from " + schema + "." + tname + " natural join " + schema + ".lgbasic where " + bbstr + activestr + filterstr + " limit " + limit + ";";
+            sql = "SELECT lgid, lastupdate, lgname, lgtypeid, lgstatusid, source, mail_address, alt_address, mail_city, mail_state, mail_zip, url, prev_name, abbrev_name, st_asgeojson(st_transform(ST_Simplify(geom," + tolerance + "),4326)) AS geojson from " + schema + "." + tname + " natural join " + schema + ".lgbasic where " + bbstr + activestr + ctfstr + filterstr + " limit " + limit + ";";
         }
 
 
