@@ -52,6 +52,46 @@ var appRouter = function(app) {
             filterstr = '';
         }
 
+        var ctf = req.query.ctf || '0'; //comma delimited list of lgstatusid's, if '0' then all
+
+        var ctfarray = [];
+        var ctffilterarray = [];
+
+
+        if (ctf !== '0') {
+            ctfarray = ctf.split(",");
+            var ctfstr = "";
+
+            ctfarray.forEach(function(a) {
+                ctfstr = ctfstr + " ctf='" + a + "' or";
+            });
+
+            ctfstr = ctfstr.slice(0, -2);
+            ctfstr = " and (" + ctfstr + ")";
+
+        } else {
+            ctfstr = '';
+        }
+
+
+        var filter = req.query.filter || '0'; //comma delimited list of lgtypeid's, if '0' then all
+
+        if (filter !== '0') {
+            filterarray = filter.split(",");
+            var filterstr = "";
+
+            filterarray.forEach(function(b) {
+                filterstr = filterstr + " lgtypeid='" + b + "' or";
+            });
+
+            //trim last trailing 'or'
+            filterstr = filterstr.slice(0, -2);
+            filterstr = " and (" + filterstr + ")";
+
+        } else {
+            filterstr = '';
+        }
+
         var tolerance = 0;
 
         //get simplify factor
