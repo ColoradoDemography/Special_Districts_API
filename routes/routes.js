@@ -33,25 +33,6 @@ var appRouter = function(app) {
             activestr = '';
         }
 
-
-        var filter = req.query.filter || '0'; //comma delimited list of lgtypeid's, if '0' then all
-
-        if (filter !== '0') {
-            filterarray = filter.split(",");
-            var filterstr = "";
-
-            filterarray.forEach(function(b) {
-                filterstr = filterstr + " lgtypeid='" + b + "' or";
-            });
-
-            //trim last trailing 'or'
-            filterstr = filterstr.slice(0, -2);
-            filterstr = " and (" + filterstr + ")";
-
-        } else {
-            filterstr = '';
-        }
-
         var ctf = req.query.ctf || '0'; //comma delimited list of lgstatusid's, if '0' then all
 
         var ctfarray = [];
