@@ -33,27 +33,6 @@ var appRouter = function(app) {
             activestr = '';
         }
 
-        var ctf = req.query.ctf || '0'; //comma delimited list of lgstatusid's, if '0' then all
-
-        var ctfarray = [];
-        var ctffilterarray = [];
-
-
-        if (ctf !== '0') {
-            ctfarray = ctf.split(",");
-            var ctfstr = "";
-
-            ctfarray.forEach(function(a) {
-                ctfstr = ctfstr + " ctf='" + a + "' or";
-            });
-
-            ctfstr = ctfstr.slice(0, -2);
-            ctfstr = " and (" + ctfstr + ")";
-
-        } else {
-            ctfstr = '';
-        }
-
 
         var filter = req.query.filter || '0'; //comma delimited list of lgtypeid's, if '0' then all
 
@@ -162,7 +141,7 @@ var appRouter = function(app) {
         if (req.query.lgid) {
             sql = "SELECT lgid, lastupdate, lgname, lgtypeid, lgstatusid, source, mail_address, alt_address, mail_city, mail_state, mail_zip, url, prev_name, abbrev_name, st_asgeojson(st_transform(ST_Simplify(geom," + tolerance + "),4326)) AS geojson from " + schema + "." + tname + " natural join " + schema + ".lgbasic " + lgidstr + ";";
         } else {
-            sql = "SELECT lgid, lastupdate, lgname, lgtypeid, lgstatusid, source, mail_address, alt_address, mail_city, mail_state, mail_zip, url, prev_name, abbrev_name, st_asgeojson(st_transform(ST_Simplify(geom," + tolerance + "),4326)) AS geojson from " + schema + "." + tname + " natural join " + schema + ".lgbasic where " + bbstr + activestr + ctfstr + filterstr + " limit " + limit + ";";
+            sql = "SELECT lgid, lastupdate, lgname, lgtypeid, lgstatusid, source, mail_address, alt_address, mail_city, mail_state, mail_zip, url, prev_name, abbrev_name, st_asgeojson(st_transform(ST_Simplify(geom," + tolerance + "),4326)) AS geojson from " + schema + "." + tname + " natural join " + schema + ".lgbasic where " + bbstr + activestr + filterstr + " limit " + limit + ";";
         }
 
 
