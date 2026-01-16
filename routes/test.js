@@ -189,7 +189,7 @@ var appRouter = function(app) {
 
         function sendtodatabase(sqlstring) {
 
-            var conString = "postgres://codemog:demography:34.55.5.64:5432/dola";  //this is a read only account, have fun!
+            var conString = "postgres://codemog:demography@34.55.5.64:5432/dola";  //this is a read only account, have fun!
             var client = new pg.Client(conString);
 
             client.connect(function(err) {
