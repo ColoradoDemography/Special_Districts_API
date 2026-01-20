@@ -11,6 +11,6 @@ app.use(function(req, res, next) {
 
 var routes = require("./routes/routes.js")(app);
 
-var server = app.listen(4006, function() {
+var server = app.listen(4006, () => {
     console.log("Listening on port %s...", server.address().port);
 });
