@@ -4,8 +4,8 @@
   "description": "spatial query for special districts",
   "main": "app.js",
   "dependencies": {
-    "express": "^4.17.1",
-    "pg": "^7.12.1"
+    "express": "^5.2.1",
+    "pg": "^8.17.2"
   },
   "devDependencies": {},
   "scripts": {
