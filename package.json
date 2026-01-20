@@ -3,9 +3,9 @@
   "version": "0.0.1",
   "description": "spatial query for special districts",
   "main": "app.js",
-  "dependencies": {
-    "express": "^5.2.1",
-    "pg": "^8.17.2"
+ "dependencies": {
+    "express": "^4.22.1",
+    "pg": "^7.18.2"
   },
   "devDependencies": {},
   "scripts": {
