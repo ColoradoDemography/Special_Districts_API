@@ -498,8 +498,8 @@ var appRouter = function(app) {
                     connector.close();
 
                 });
-            //});
-        }
+            });
+        //}
     });
 }
 
