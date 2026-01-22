@@ -450,10 +450,17 @@ var appRouter = function(app) {
                       user: 'codemog',
                       password: 'demography',
                       database: 'dola',
+                      table: 'districts',
                       max: 5,
                     });
+
+                const {rows} = await pool.query('SELECT NOW()');
+                console.table(rows); // prints returned time value from server
+                
+                await pool.end();
+                connector.close();
             
-                pool.query(sqlstring, function(err, result) {
+               /* pool.query(sqlstring, function(err, result) {
                     if (err) {
                         return console.error('error running query', err);
                     }
@@ -497,7 +504,7 @@ var appRouter = function(app) {
                     pool.end();
                     connector.close();
 
-                });
+                }); */
             }
         //}
     //});
