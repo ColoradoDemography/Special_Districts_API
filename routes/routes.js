@@ -498,9 +498,9 @@ var appRouter = function(app) {
                     connector.close();
 
                 });
-            });
+            }
         //}
-    });
+    //});
 }
 
 module.exports = appRouter;
