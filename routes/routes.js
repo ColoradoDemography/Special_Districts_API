@@ -247,5 +247,3 @@ var appRouter = function(app) {
 }
 
 module.exports = appRouter;
-
-module.exports = appRouter;
